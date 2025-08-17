@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmic.eidex.gui.ControllerFX.LoginController">
+   <left>
+      <AnchorPane prefHeight="407.0" prefWidth="228.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#158620" height="400.0" stroke="BLACK" strokeType="INSIDE" width="228.0" />
+            <ImageView fitHeight="400.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Eidex.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="20.0" layoutY="211.0" prefHeight="69.0" prefWidth="189.0" text="Cosmic">
+               <font>
+                  <Font name="Informal Roman" size="72.0" />
+               </font>
+            </Label>
+            <Label layoutX="31.0" layoutY="294.0" prefHeight="92.0" prefWidth="168.0" text="Eidex">
+               <font>
+                  <Font name="Informal Roman" size="72.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="400.0" prefWidth="332.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="nicknameFeld" layoutX="95.0" layoutY="101.0" prefHeight="25.0" prefWidth="175.0" promptText="Nickname" />
+            <PasswordField fx:id="passwortFeld" layoutX="94.0" layoutY="165.0" pickOnBounds="false" prefHeight="23.0" prefWidth="175.0" promptText="Passwort" scaleShape="false">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </PasswordField>
+            <Label layoutX="27.0" layoutY="105.0" text="Nickname" />
+            <Label layoutX="27.0" layoutY="168.0" text="Passwort" />
+            <ImageView fitHeight="57.0" fitWidth="46.0" layoutX="123.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@GreenLock.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="89.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleAnmelden" prefHeight="25.0" prefWidth="114.0" text="Anmelden" />
+            <Button layoutX="88.0" layoutY="327.0" mnemonicParsing="false" onAction="#handleRegistrieren" prefHeight="25.0" prefWidth="116.0" text="Registrieren" />
+            <Label fx:id="fehlermeldungLabel" layoutX="95.0" layoutY="223.0" textFill="red" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

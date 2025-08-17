@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="800" prefWidth="1300" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmic.eidex.gui.ControllerFX.SpielraumController">
+   <VBox layoutX="572.0" layoutY="27.0" prefHeight="287.0" prefWidth="137.0" spacing="5.0">
+      <children>
+      
+          <!-- Trumpfanzeige als Bild -->
+          <HBox alignment="CENTER" spacing="15.0">
+              <Label fx:id="trumpf" text="Trumpf:" />
+              <ImageView fx:id="trumpfImage" fitHeight="100" preserveRatio="true" />
+          </HBox>
+         <Label fx:id="partie" text="Partie: X" />
+         <Label fx:id="runde" text="Runde: X" />
+         <HBox layoutX="10.0" layoutY="138.0" prefHeight="71.0" prefWidth="100.0" spacing="5.0">
+            <children>
+               <Label fx:id="status" text="Spielstatus" />
+            </children>
+         </HBox>
+         <Label fx:id="amzuglabel" text="Aktuell am Zug:" />
+         <Label fx:id="spieleramzug" text="Spieler" />
+      </children>
+   </VBox>
+
+    <!-- Spielbereich in der Mitte -->
+    <Pane fx:id="spielbereich" layoutX="465.0" layoutY="314.0" prefHeight="260.0" prefWidth="351.0" style="-fx-background-color: lightgray;">
+        <Label layoutX="143.0" layoutY="122.0" text="Spielbereich" />
+    </Pane>
+
+    <!-- Spieler01 unten -->
+    <VBox alignment="CENTER" layoutX="599.0" layoutY="619.0" spacing="5">
+        <Label fx:id="spieler01name" text="Spieler01" />
+        <Label fx:id="spieler01punkte" text="Gewinnpunkte: X" />
+      <Label fx:id="spieler01rundenpunkte" text="Rundenpunkte: X" />
+        <CheckBox fx:id="spieler01Bereit" onAction="#handleBereit1" text="Bereit?" />
+      <Label fx:id="gedruecktlabel01" text="Gedrückt:" />
+    </VBox>
+   <VBox layoutX="285.0" layoutY="724.0" prefHeight="34.0" prefWidth="720.0">
+      <children>
+           <HBox fx:id="spieler01GedruecktBox" alignment="CENTER" spacing="5">
+               <Label text="Gedrückt" />
+           </HBox>
+           <HBox fx:id="spieler01KartenBox" alignment="CENTER" spacing="5">
+               <Label text="Karten" />
+           </HBox>
+      </children>
+   </VBox>
+
+    <!-- Spieler02 rechts -->
+    <VBox alignment="CENTER" layoutX="1022.0" layoutY="367.0" spacing="5">
+        <Label fx:id="spieler02name" text="Spieler02" />
+        <Label fx:id="spieler02punkte" text="Gewinnpunkte: X" />
+      <Label fx:id="spieler02rundenpunkte" text="Rundenpunkte: X" />
+        <CheckBox fx:id="spieler02Bot" onAction="#handleSpieler02BotEasy" text="Easy Bot?" />
+      <CheckBox fx:id="spieler02Bot1" onAction="#handleSpieler02BotHard" text="Hard Bot?" />
+        <CheckBox fx:id="spieler02Bereit" disable="true" text="Bereit?" />
+      <Label fx:id="gedruecktlabel02" text="Gedrückt:" />
+        <VBox fx:id="spieler02GedruecktBox" alignment="CENTER" spacing="5">
+            <Label text="Gedrückt" />
+        </VBox>
+        <VBox fx:id="spieler02KartenBox" alignment="CENTER" spacing="-60">
+            <Label text="Karten" />
+        </VBox>
+    </VBox>
+
+    <!-- Spieler03 links -->
+    <VBox alignment="CENTER" layoutX="188.0" layoutY="367.0" spacing="5">
+        <Label fx:id="spieler03name" text="Spieler03" />
+        <Label fx:id="spieler03punkte" text="Gewinnpunkte: X" />
+      <Label fx:id="spieler03rundenpunkte" text="Rundenpunkte: X" />
+        <CheckBox fx:id="spieler03Bot" onAction="#handleSpieler03BotEasy" text="Easy Bot?" />
+      <CheckBox fx:id="spieler03Bot1" layoutX="32.0" layoutY="54.0" onAction="#handleSpieler03BotHard" text="Hard Bot?" />
+        <CheckBox fx:id="spieler03Bereit" disable="true" text="Bereit?" />
+      <Label fx:id="gedruecktlabel03" text="Gedrückt:" />
+        <VBox fx:id="spieler03GedruecktBox" alignment="CENTER" spacing="5">
+            <Label text="Gedrückt" />
+        </VBox>
+        <VBox fx:id="spieler03KartenBox" alignment="CENTER" spacing="-60">
+            <Label text="Karten" />
+        </VBox>
+    </VBox>
+
+    <!-- Chatbereich -->
+    <VBox layoutX="1069.0" layoutY="14.0" prefHeight="252.0" prefWidth="218.0" spacing="5">
+        <Label text="Chatbox" />
+        <ListView fx:id="chatListView" editable="false" prefHeight="200" prefWidth="180.0" />
+        <TextField fx:id="chatTextField" promptText="Nachricht schreiben..." />
+    </VBox>
+
+    <!-- Button-Leiste -->
+    <HBox layoutX="14.0" layoutY="14.0" spacing="20">
+        <Button onAction="#handleVerlassen" text="Verlassen" />
+        <Button onAction="#handleSpielregeln" text="Spielregeln" />
+        <Button onAction="#handleBestenliste" text="Bestenliste" />
+        <Button fx:id="spielStartenBtn" onAction="#handleSpielStarten" text="Spiel starten" />
+        <Button onAction="#handleChatSenden" text="Senden" />
+    </HBox>
+
+
+</AnchorPane>

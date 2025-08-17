@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmic.eidex.gui.ControllerFX.AendernController">
+    <Label layoutX="200.0" layoutY="26.0" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Passwort ändern">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Label>
+
+    <VBox alignment="CENTER" spacing="20" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+        <Label style="-fx-font-size: 16px;" text="Altes Passwort zur Bestätigung" />
+        <PasswordField fx:id="altesPasswortFeld" maxWidth="250" />
+      <Label style="-fx-font-size: 16px;" text="Neues Passwort" />
+      <PasswordField fx:id="neuesPasswortFeld" maxWidth="250" />
+
+        <HBox alignment="CENTER" spacing="10">
+            <Button fx:id="zurueckBtn" onAction="#handleZurueck" text="Zurück" />
+            <Button fx:id="bestaetigenBtn" onAction="#handleBestaetigen" text="Bestätigen" />
+        </HBox>
+    </VBox>
+</AnchorPane>
